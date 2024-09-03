@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post Detail</title>
+</head>
+<body>
+    <h1><%= post.title %></h1>
+    <p><strong>Author:</strong> <%= post.author %></p>
+    <p><strong>Creation Date:</strong> <%= new Date(post.creationDate).toDateString() %></p>
+    <p><strong>Content:</strong></p>
+    <p><%= post.content %></p>
+
+    <a href="/posts">Back to Posts</a>
+
+    <!-- Form for deleting the post -->
+    <form action="/posts/<%= post._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete Post</button>
+    </form>
+</body>
+</html>

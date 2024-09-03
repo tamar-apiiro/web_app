@@ -1,0 +1,26 @@
+<%- include('_header'); -%>
+
+<h1>Forum</h1>
+<!-- Button to navigate to Add Post page -->
+<a href="/posts/add"><button>Add Post</button></a>
+
+<!-- Display existing posts -->
+<div>
+  <h2>Existing Posts</h2>
+  <% if (posts.length > 0) { %>
+    <ul>
+      <% posts.forEach(post => { %>
+        <li>
+          <strong><%= post.title %></strong><br>
+          <em>by <%= post.author %> on <%= new Date(post.creationDate).toDateString() %></em><br>
+          <p><%= post.content %></p>
+        </li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>No posts available.</p>
+  <% } %>
+</div>
+
+
+<%- include('_footer'); -%>

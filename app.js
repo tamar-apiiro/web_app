@@ -28,8 +28,8 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+app.listen(27017, () => {
+  console.log('Server is running on port 27017');
 });
 
 console.log("test1")

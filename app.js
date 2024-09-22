@@ -15,7 +15,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/forum', { useNewUrlParser: true, useUnifiedTopology: true })
+// Connect to MongoDB
+mongoose.connect('mongodb://host.docker.internal:27017/forum', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Database connection error:', err));
 
@@ -28,7 +29,7 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(27017, () => {
+app.listen(5000, () => {
   console.log('Server is running on port 5000');
 });
 

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: forum
-        image: e71ea9d46954d8f6dbed5cd6410ae5f4aff876c45191665200ec67603025c10f
+        image: forum_project:latest  # Updated to your local image name
         ports:
         - containerPort: 80
         resources:
@@ -25,3 +25,6 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        env:
+        - name: DATABASE_URL
+          value: "mongodb://host.docker.internal:27017/forum"

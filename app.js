@@ -16,9 +16,11 @@ app.set('view engine', 'ejs');
 
 // Connect to MongoDB
 // Connect to MongoDB
-mongoose.connect('mongodb://host.docker.internal:27017/forum', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Database connection error:', err));
+mongoose.connect('mongodb://localhost:27017/forum', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
 
 // Use routes
 app.use('/', postRoutes);
